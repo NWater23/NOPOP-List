@@ -1,0 +1,20 @@
+[uBlock Origin]
+! Title: NO Popup List [Force]
+! Homepage: https://github.com/NWater23/NOPOP-List
+! Licence: https://github.com/NWater23/NOPOP-List/blob/master/LICENSE
+! Expires: 4 day
+! 
+! 杀掉一切触摸事件(建议针对个别网站使用)
+! 会导致触屏小游戏等无法使用
+##+js(aeld, /^(?:click|mousedown|mousemove|touchstart|touchend|touchmove)$/, system.popunder, log, 2)
+! 阻止不良网站
+/(https?:\/\/)([0-9a-z]+\.)*([a-z]+)[0-9]+([a-z]+)\.[a-z]+:[0-9]+\//$all,_
+/(https?:\/\/)([0-9a-z]+\.)*([0-9]+)([a-z]+)([0-9]+)\.[a-z-]+:[0-9]+\//$all,_
+/(https?:\/\/)([0-9]+\.)*[0-9]{5,}\.(xyz|vip|top|net|[a-z]{2})\//$all,_
+/(https?:\/\/)([0-9]{3,}[a-z]+|[a-z]+[0-9]{3,})\.(xyz|vip|top|net|[a-z]{2})\//$all,_
+*.公司
+! 阻止赌场广告
+/is_not=[0-9].*target=[0-9]/$all,_
+/https?:\/\/([0-9a-z]+\.)(com|net|xyz|vip|top|[a-z]{2}):[0-9]+\/[a-z]{1,2}\/[0-9]+/$all,_
+/\/dz\/[0-9]{3,5}/$all,_
+/\/cc\/[0-9]{3,5}/$all,_

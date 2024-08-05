@@ -1,0 +1,29 @@
+[uBlock Origin]
+! Title: NO Popup List [Regular]
+! Homepage: https://github.com/NWater23/NOPOP-List
+! Licence: https://github.com/NWater23/NOPOP-List/blob/master/LICENSE
+! Expires: 4 day
+! 
+! 强烈建议 :remove() 从 DOM 层面阻止加载
+! 屏幕底部广告触发按钮
+##div[style*="fixed"][style*="bottom:"][style*="background:"][style*="opacity:"]:remove()
+##div div div:has(span[style*="absolute"][style*="font-size"]):remove()
+##div[style*="bottom:"][style*="left:"][style*="background-position:"]:remove()
+! 跳转广告按钮
+##[href*="taobao.com/?mm_sycmid="]:remove()
+! 播放器广告
+##div.clearfix.playding
+##.player-fixed > .tips:remove()
+##.myui-player__box > .tips:remove()
+##.hidden_xs.listshow:remove()
+! 耗费资源的背景动画
+##canvas.particles-js-canvas-el:remove()
+! 阻止触发广告
+##+js(__ad, Notification)
+##+js(_go, Notification)
+##+js(adFlag, Notification)
+! 不需要无障碍辅助
+.com/dinamic/barrier-free/$script
+/dinamic/barrier-free$script
+||aria.js$script
+||static.zhihu.com/event/wza/*/aria.js$script
