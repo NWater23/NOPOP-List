@@ -16,14 +16,22 @@
 ##.player-fixed > .tips:remove()
 ##.myui-player__box > .tips:remove()
 ##.hidden_xs.listshow:remove()
+
 ! 耗费资源的背景动画
 ##canvas.particles-js-canvas-el:remove()
+! 网页粒子背景
+*/canvas-nest.min.js$script
+
 ! 阻止触发广告
 ##+js(__ad, Notification)
 ##+js(_go, Notification)
 ##+js(adFlag, Notification)
-! 不需要无障碍辅助
+
+! 我不是残疾人: 禁用无障碍辅助
 .com/dinamic/barrier-free/$script
 /dinamic/barrier-free$script
 ||aria.js$script
 ||static.zhihu.com/event/wza/*/aria.js$script
+
+! 保护剪切板
+##+js(aeld, /^(?:copy)$/)
